@@ -1,9 +1,0 @@
-extends ../layouts/base
-
-block content
-  h1 Hello World
-  if user
-    a(href='/keystone') Open Admin UI
-    a(href='/keystone/signout') Sign out
-  else
-    a(href='/keystone/signin') Sign in

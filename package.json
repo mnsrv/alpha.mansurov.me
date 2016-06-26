@@ -8,5 +8,8 @@
   },
   "scripts": {
     "start": "node keystone.js"
+  },
+  "devDependencies": {
+    "twig": "^0.9.5"
   }
 }

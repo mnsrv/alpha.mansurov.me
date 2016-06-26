@@ -1,7 +1,8 @@
 var keystone = require('keystone');
+var Twig = require('twig');
+Twig.cache(false);
 
 keystone.init({
-
     'name': 'My Project',
     'brand': 'Project',
 
@@ -9,15 +10,15 @@ keystone.init({
     'static': 'public',
 
     'views': 'templates/views',
-    'view engine': 'jade',
-
-    'auth': true,
-    'user model': 'User',
-    'cookie secret': 'demo',
+    'view engine': 'twig',
+    'custom engine': Twig.render,
 
     'auto update': true,
-    'mongo': 'mongodb://localhost/react-keystone'
+    'cookie secret': 'demo',
+    'auth': true,
+    'user model': 'User',
 
+    'mongo': 'mongodb://localhost/react-keystone'
 });
 
 keystone.import('models');
