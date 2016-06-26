@@ -6,7 +6,6 @@ keystone.init({
     'name': 'My Project',
     'brand': 'Project',
 
-    'less': 'public',
     'static': 'public',
 
     'views': 'templates/views',

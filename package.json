@@ -7,9 +7,18 @@
     "lodash": "^3.10.1"
   },
   "scripts": {
-    "start": "node keystone.js"
+    "start": "node keystone.js",
+    "build": "webpack"
   },
   "devDependencies": {
-    "twig": "^0.9.5"
+    "autoprefixer": "^6.3.6",
+    "css-loader": "^0.23.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "node-sass": "^3.8.0",
+    "postcss-loader": "^0.9.1",
+    "sass-loader": "^3.2.1",
+    "style-loader": "^0.13.1",
+    "twig": "^0.9.5",
+    "webpack": "^1.13.1"
   }
 }
