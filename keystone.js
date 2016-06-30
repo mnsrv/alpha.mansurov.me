@@ -6,7 +6,7 @@ keystone.init({
     'name': 'My Project',
     'brand': 'Project',
 
-    'static': 'public',
+    'static': ['public', 'uploads'],
 
     'views': 'templates/views',
     'view engine': 'twig',
