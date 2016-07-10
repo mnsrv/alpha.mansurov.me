@@ -1,6 +1,6 @@
 // Simulate config options from your production environment by
 // customising the .env file in your project's root folder.
-require('dotenv').config();
+require('dotenv').config({silent: true});
 
 var keystone = require('keystone');
 var Twig = require('twig');
