@@ -3,8 +3,8 @@ var Twig = require('twig');
 Twig.cache(false);
 
 keystone.init({
-    'name': 'My Project',
-    'brand': 'Project',
+    'name': 'Админка',
+    'brand': 'Сайт Александра Мансурова',
 
     'static': ['public', 'uploads'],
 
