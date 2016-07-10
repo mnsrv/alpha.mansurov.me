@@ -7,7 +7,7 @@
 	<header class="blog__header">
 		<div class="content">
 			{% if data.category %}
-				<h1 class="blog__title"><a class="blog__link" href="/blog">{{ title }}</a></h1>
+				<h1 class="blog__title"><a class="link" href="/blog">{{ title }}</a></h1>
 				<p class="blog__category-text">{{ data.posts.results.length }} заметки с тегом</p>
 				<p class="blog__category-name">{{ data.category.name }}</p>
 			{% else %}
@@ -26,13 +26,13 @@
 					{% for post in data.posts.results %}
 						<article class="post" data-ks-editable="editable(user, { list: 'Post', id: post.id })">
 							<h2 class="post__title">
-								<a href="/blog/post/{{ post.slug }}">{{ post.title }}</a>
+								<a class="link" href="/blog/post/{{ post.slug }}">{{ post.title }}</a>
 							</h2>
 							<div class="post__text">{{ post.content | raw }}</div>
 							<p class="post__footer">
 								<span class="post__date">{{ post._.publishedDate.format('D MMMM') }}</span>
 								{% for cat in post.categories %}
-									<a class="post__tag" href="/blog/{{ cat.key }}">{{ cat.name }}</a>
+									<a class="post__tag link" href="/blog/{{ cat.key }}">{{ cat.name }}</a>
 								{% endfor %}
 							</p>
 						</article>
