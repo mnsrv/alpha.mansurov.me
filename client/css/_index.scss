@@ -1,0 +1,11 @@
+.index {
+  &__header {
+    box-sizing: border-box;
+    padding-top: 10px;
+    margin-bottom: 50px;
+  }
+  &__content {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}

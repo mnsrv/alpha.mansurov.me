@@ -2,9 +2,9 @@
 
 {% set mainclass = "blog" %}
 
-{% block intro %}
+{% block header %}
 	{% set title = "Картинок нет" %}
-	<div class="blog__header">
+	<header class="blog__header">
 		<div class="content">
 			{% if data.category %}
 				<h1 class="blog__title"><a class="blog__link" href="/blog">{{ title }}</a></h1>
@@ -15,7 +15,7 @@
 				<p class="blog__description">Но вы держитесь!</p>
 			{% endif %}
 		</div>
-	</div>
+	</header>
 {% endblock %}
 
 {% block content %}
@@ -46,9 +46,4 @@
 				<h3>Здесь пока пусто.</h3>
 			{% endif %}
 		{% endif %}
-		<div class="blog__footer">
-			<div class="content">
-					<p class="blog__copyright">&copy; 2016. Александр Мансуров. Сайт работает на <a class="keystone" href="http://keystonejs.com/" target="_blank">Keystone JS</a></p>
-			</div>
-		</div>
 {% endblock %}

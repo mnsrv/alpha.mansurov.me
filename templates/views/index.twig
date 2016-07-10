@@ -1,9 +1,16 @@
 {% extends "../layouts/default.twig" %}
 
-{% block intro %}
+{% block header %}
 	{% set title = "(Альфа) Сайт Александра Мансурова" %}
-	<h1>Добро пожаловать на сайт</h1>
+	<header class="index__header content">
+		<h1>Уважаемые гости и владелец страницы</h1>
+	</header>
 {% endblock %}
 {% block content %}
-	<p>Ссылка на <a href="/blog">блог</a></p>
+	<div class="content index__content">
+		<p>Сайт находится на стадии разработки.</p>
+		<p>Приносим извинения за оказанные неудобства.</p>
+		<hr>
+		<p>В данный момент ведутся работы над <a class="link" href="/blog">блогом</a></p>
+	</div>
 {% endblock %}
