@@ -13,11 +13,11 @@ keystone.init({
     'custom engine': Twig.render,
 
     'auto update': true,
-    'cookie secret': 'demo',
+    'cookie secret': process.env.COOKIE_SECRET,
     'auth': true,
     'user model': 'User',
 
-    'mongo': 'mongodb://localhost/react-keystone'
+    'mongo': process.env.MONGODB_URI || 'mongodb://localhost/react-keystone'
 });
 
 keystone.import('models');
