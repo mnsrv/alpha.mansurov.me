@@ -13,7 +13,8 @@
     "start": "node keystone.js",
     "build": "webpack",
     "watch": "webpack -w",
-    "postinstall": "webpack -p --progress"
+    "production": "webpack -p --progress",
+    "postinstall": "npm run production"
   },
   "devDependencies": {
     "autoprefixer": "^6.3.6",
