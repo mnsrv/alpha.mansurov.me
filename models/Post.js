@@ -7,31 +7,20 @@ var Types = keystone.Field.Types;
  */
 
 var Post = new keystone.List('Post', {
+	label: 'Заметки',
+	singular: 'Заметка',
+	plural: 'Заметки',
 	map: { name: 'title' },
 	autokey: { path: 'slug', from: 'title', unique: true },
 });
 
 Post.add({
-	title: { type: String, required: true },
-	state: { type: Types.Select, options: 'draft, published, archived', default: 'draft', index: true },
-	author: { type: Types.Relationship, ref: 'User', index: true },
-	publishedDate: { type: Types.Date, index: true, dependsOn: { state: 'published' } },
-	image: {
-		type: Types.LocalFile,
-		dest: './uploads/images',
-		prefix: '/images',
-		label: 'Картинка'
-	},
-	content: {
-		brief: { type: Types.Html, wysiwyg: true, height: 150 },
-		extended: { type: Types.Html, wysiwyg: true, height: 400 },
-	},
-	categories: { type: Types.Relationship, ref: 'PostCategory', many: true },
+	title: { type: String, required: true, label: 'Название' },
+	content: { type: Types.Html, wysiwyg: true, height: 400, label: 'Текст' },
+	categories: { type: Types.Relationship, ref: 'PostCategory', many: true, label: 'Теги' },
+	state: { type: Types.Select, options: 'черновик, опубликована', default: 'черновик', index: true, label: 'Состояние' },
+	publishedDate: { type: Types.Date, index: true, dependsOn: { state: 'опубликована' }, label: 'Дата публикации' },
 });
 
-Post.schema.virtual('content.full').get(function () {
-	return this.content.extended || this.content.brief;
-});
-
-Post.defaultColumns = 'title, state|20%, author|20%, publishedDate|20%';
+Post.defaultColumns = 'title, state|20%, publishedDate|20%';
 Post.register();

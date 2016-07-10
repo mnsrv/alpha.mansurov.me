@@ -3,7 +3,7 @@
 {% set mainclass = "blog" %}
 
 {% block intro %}
-	{% set title = "По волнам" %}
+	{% set title = "Картинок нет" %}
 	<div class="blog__header">
 		<div class="content">
 			{% if data.category %}
@@ -12,7 +12,7 @@
 				<p class="blog__category-name">{{ data.category.name }}</p>
 			{% else %}
 				<h1 class="blog__title">{{ title }}</h1>
-				<p class="blog__description">Мысли 23 летнего фронтенд-разработчика</p>
+				<p class="blog__description">Но вы держитесь!</p>
 			{% endif %}
 		</div>
 	</div>
@@ -28,10 +28,7 @@
 							<h2 class="post__title">
 								<a href="/blog/post/{{ post.slug }}">{{ post.title }}</a>
 							</h2>
-							{% if post.image.exists %}
-								<img src="{{ post.image.href }}" class="post__image">
-							{% endif %}
-							<div class="post__text">{{ post.content.full | raw }}</div>
+							<div class="post__text">{{ post.content | raw }}</div>
 							<p class="post__footer">
 								<span class="post__date">{{ post._.publishedDate.format('D MMMM') }}</span>
 								{% for cat in post.categories %}

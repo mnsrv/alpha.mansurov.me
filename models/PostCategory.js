@@ -7,6 +7,9 @@ var keystone = require('keystone');
 
 var PostCategory = new keystone.List('PostCategory', {
 	autokey: { from: 'name', path: 'key', unique: true },
+	label: 'Теги',
+	singular: 'Тег',
+	plural: 'Теги'
 });
 
 PostCategory.add({
