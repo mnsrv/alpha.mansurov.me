@@ -10,7 +10,7 @@
 		{% block head %}{% endblock %}
 	</head>
 	<body>
-    <div id="body">
+    <main class="main {{ mainclass }}">
 			{% block intro %}{% endblock %}
 			{{ FlashMessages.renderMessages(messages) }}
 			{% block content %}{% endblock %}

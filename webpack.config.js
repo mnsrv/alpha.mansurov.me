@@ -7,13 +7,17 @@ module.exports = {
   output: {
     filename: "js/main.js",
     path: __dirname + "/public/",
-    publicPath: "/public/"
+    publicPath: "/"
   },
   module: {
     loaders: [
       {
         test: /\.(scss|css)$/,
         loader: ExtractTextPlugin.extract("style-loader", "css-loader!postcss-loader!sass-loader")
+      },
+      {
+        test: /\.(woff|woff2)$/,
+        loader: 'url-loader?limit=10000&name=fonts/[name].[ext]?v=[hash]'
       }
     ]
   },
