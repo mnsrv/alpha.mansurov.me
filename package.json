@@ -7,16 +7,7 @@
     "dotenv": "^2.0.0",
     "keystone": "https://github.com/keystonejs/keystone.git",
     "lodash": "^3.10.1",
-    "twig": "^0.9.5"
-  },
-  "scripts": {
-    "start": "node keystone.js",
-    "build": "webpack",
-    "watch": "webpack -w",
-    "production": "webpack -p --progress",
-    "postinstall": "npm run production"
-  },
-  "devDependencies": {
+    "twig": "^0.9.5",
     "autoprefixer": "^6.3.6",
     "css-loader": "^0.23.1",
     "extract-text-webpack-plugin": "^1.0.1",
@@ -27,6 +18,13 @@
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
     "webpack": "^1.13.1"
+  },
+  "scripts": {
+    "start": "node keystone.js",
+    "build": "webpack",
+    "watch": "webpack -w",
+    "production": "webpack -p --progress",
+    "postinstall": "npm run production"
   },
   "engines": {
     "node": "5.10.1"
