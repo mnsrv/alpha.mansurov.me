@@ -9,7 +9,8 @@
   "scripts": {
     "start": "node keystone.js",
     "build": "webpack",
-    "watch": "webpack -w"
+    "watch": "webpack -w",
+    "postinstall": "npm install && npm run build"
   },
   "devDependencies": {
     "autoprefixer": "^6.3.6",
