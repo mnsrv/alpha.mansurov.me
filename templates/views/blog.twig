@@ -20,30 +20,30 @@
 
 {% block content %}
 	{% if user %}<a class="blog__new" href="/keystone/posts?new">Напиши</a>{% endif %}
-		{% if data.posts.results.length %}
-			<div class="blog__posts">
-				<div class="content">
-					{% for post in data.posts.results %}
-						<article class="post" data-ks-editable="editable(user, { list: 'Post', id: post.id })">
-							<h2 class="post__title">
-								<a class="link" href="/blog/post/{{ post.slug }}">{{ post.title }}</a>
-							</h2>
-							<div class="post__text">{{ post.content | raw }}</div>
-							<p class="post__footer">
-								<span class="post__date">{{ post._.publishedDate.format('D MMMM') }}</span>
-								{% for cat in post.categories %}
-									<a class="post__tag link" href="/blog/{{ cat.key }}">{{ cat.name }}</a>
-								{% endfor %}
-							</p>
-						</article>
-					{% endfor %}
-				</div>
-			</div>
-		{% else %}
-			{% if data.category %}
-				<h3 class="text-muted">There are no posts in the category {{ data.category.name }}.</h3>
+	<div class="blog__posts">
+		<div class="content">
+			{% if data.posts.results.length %}
+				{% for post in data.posts.results %}
+					<article class="post" data-ks-editable="editable(user, { list: 'Post', id: post.id })">
+						<h2 class="post__title">
+							<a class="link" href="/blog/post/{{ post.slug }}">{{ post.title }}</a>
+						</h2>
+						<div class="post__text">{{ post.content | raw }}</div>
+						<p class="post__footer">
+							<span class="post__date">{{ post._.publishedDate.format('D MMMM') }}</span>
+							{% for cat in post.categories %}
+								<a class="post__tag link" href="/blog/{{ cat.key }}">{{ cat.name }}</a>
+							{% endfor %}
+						</p>
+					</article>
+				{% endfor %}
 			{% else %}
-				<h3>Здесь пока пусто.</h3>
+				{% if data.category %}
+					<p>Нет заметок с тегом {{ data.category.name }}.</h3>
+				{% else %}
+					<p>Здесь пока пусто  ¯\_(ツ)_/¯.</p>
+				{% endif %}
 			{% endif %}
-		{% endif %}
+		</div>
+	</div>
 {% endblock %}
