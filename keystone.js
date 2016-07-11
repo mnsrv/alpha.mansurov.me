@@ -10,23 +10,23 @@ var Twig = require('twig');
 Twig.cache(false);
 
 keystone.init({
-    'name': 'Админка',
-    'brand': 'Сайт Александра Мансурова',
+  'name': 'Админка',
+  'brand': 'Сайт Александра Мансурова',
 
-    'static': ['public', 'uploads'],
+  'static': ['public', 'uploads'],
 
-    'views': 'templates/views',
-    'view engine': 'twig',
-    'custom engine': Twig.render,
+  'views': 'templates/views',
+  'view engine': 'twig',
+  'custom engine': Twig.render,
 
-    'auto update': true,
-    'cookie secret': process.env.COOKIE_SECRET,
-    'auth': true,
-    'user model': 'User',
+  'auto update': true,
+  'cookie secret': process.env.COOKIE_SECRET,
+  'auth': true,
+  'user model': 'User',
 
-    'wysiwyg additional buttons': 'strikethrough',
+  'wysiwyg additional buttons': 'strikethrough',
 
-    'mongo': process.env.MONGODB_URI || 'mongodb://localhost/react-keystone'
+  'mongo': process.env.MONGODB_URI || 'mongodb://localhost/react-keystone'
 });
 
 keystone.import('models');
