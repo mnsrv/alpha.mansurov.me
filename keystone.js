@@ -2,6 +2,9 @@
 // customising the .env file in your project's root folder.
 require('dotenv').config({silent: true});
 
+var moment = require('moment');
+moment.locale('ru');
+
 var keystone = require('keystone');
 var Twig = require('twig');
 Twig.cache(false);
