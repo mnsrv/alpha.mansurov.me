@@ -24,6 +24,8 @@ keystone.init({
     'auth': true,
     'user model': 'User',
 
+    'wysiwyg additional buttons': 'strikethrough',
+
     'mongo': process.env.MONGODB_URI || 'mongodb://localhost/react-keystone'
 });
 
