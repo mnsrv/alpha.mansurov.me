@@ -12,6 +12,7 @@ var Post = new keystone.List('Post', {
 	plural: 'Заметки',
 	map: { name: 'title' },
 	autokey: { path: 'slug', from: 'title', unique: true },
+	defaultSort: '-publishedDate'
 });
 
 Post.add({
