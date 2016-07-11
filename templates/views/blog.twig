@@ -27,6 +27,7 @@
 					<article class="post" data-ks-editable="editable(user, { list: 'Post', id: post.id })">
 						<h2 class="post__title">
 							<a class="link" href="/blog/post/{{ post.slug }}">{{ post.title }}</a>
+							{% if user %}<a class="post__edit" href="/keystone/posts/{{post.id}}">✏️</a>{% endif %}
 						</h2>
 						<div class="post__text">{{ post.content | raw }}</div>
 						<p class="post__footer">
