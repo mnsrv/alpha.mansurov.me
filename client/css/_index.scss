@@ -1,10 +1,14 @@
 .index {
-  &__header {
-    box-sizing: border-box;
-    padding-top: 10px;
-    margin-bottom: 50px;
-  }
   &__content {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}
+.links {
+  padding: 60px 10px 0;
+  max-width: $max-width;
+  margin: 0 auto;
+  p {
     font-size: 16px;
     line-height: 1.5;
   }

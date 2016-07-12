@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 .body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
@@ -12,7 +15,7 @@ h1, h2, p {
   margin: 0;
 }
 .content {
-  width: $width-blog;
+  max-width: $max-width;
   margin: 0 auto;
 }
 .link {
@@ -26,7 +29,24 @@ h1, h2, p {
     border-color: rgba($color-main, 0.3);
   }
 }
+.header {
+  padding: 20px 10px 0;
+  max-width: $max-width;
+  margin: 0 auto;
+  &__title {
+    font-size: 30px;
+    font-weight: bold;
+  }
+  &__subtitle {
+    padding-top: 10px;
+    font-size: 16px;
+  }
+}
 .footer {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  padding-top: 30px;
+  &__copyright {
+    padding: 20px 10px;
+    max-width: $max-width;
+    margin: 0 auto;
+  }
 }

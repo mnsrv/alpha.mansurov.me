@@ -1,27 +1,21 @@
 {% extends "../layouts/default.twig" %}
 
-{% set mainclass = "blog" %}
-
 {% block header %}
 	{% set title = "Картинок нет" %}
-	<header class="blog__header">
-		<div class="content">
-			{% if data.category %}
-				<h1 class="blog__title"><a class="link" href="/blog">{{ title }}</a></h1>
-				<p class="blog__category-text">{{ data.posts.results.length }} заметки с тегом</p>
-				<p class="blog__category-name">{{ data.category.name }}</p>
-			{% else %}
-				<h1 class="blog__title">{{ title }}</h1>
-				<p class="blog__description">Но вы держитесь!</p>
-			{% endif %}
-		</div>
+	<header class="header">
+		{% if data.category %}
+			<h1 class="header__title"><a class="link" href="/blog">{{ title }}</a></h1>
+			<p class="header__subtitle">{{ data.posts.results.length }} заметки с тегом {{ data.category.name }}</p>
+		{% else %}
+			<h1 class="header__title">{{ title }}</h1>
+			<p class="header__subtitle">Но вы держитесь!</p>
+		{% endif %}
 	</header>
 {% endblock %}
 
 {% block content %}
 	{% if user %}<a class="blog__new" href="/keystone/posts?new">Напиши</a>{% endif %}
-	<div class="blog__posts">
-		<div class="content">
+	<section class="blog">
 			{% if data.posts.results.length %}
 				{% for post in data.posts.results %}
 					<article class="post" data-ks-editable="editable(user, { list: 'Post', id: post.id })">
@@ -45,6 +39,5 @@
 					<p>Здесь пока пусто  ¯\_(ツ)_/¯.</p>
 				{% endif %}
 			{% endif %}
-		</div>
-	</div>
+	</section>
 {% endblock %}

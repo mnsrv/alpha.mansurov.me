@@ -4,32 +4,28 @@
 
 {% block header %}
 	{% set title = data.post.title %}
-	<header class="blog__header">
-		<div class="content">
-			<p class="blog__title">
+	<header class="header">
+			<p class="header__title">
 				<a class="link" href="/blog">Картинок нет</a>
 			</p>
-		</div>
 	</header>
 {% endblock %}
 
 {% block content %}
-	<div class="content">
-		<article class="post">
-			{% if not data.post %}
-				<h2>Invalid Post.</h2>
-			{% else %}
-				<h1 class="post__title">{{ data.post.title }}</h1>
-				<div class="post__text">
-					{{ data.post.content | raw }}
-				</div>
-				<p class="post__footer">
-					<span class="post__date">{{ data.post._.publishedDate.format('D MMMM') }}</span>
-					{% for cat in data.post.categories %}
-						<a class="post__tag link" href="/blog/{{ cat.key }}">{{ cat.name }}</a>
-					{% endfor %}
-				</p>
-			{% endif %}
-		</article>
-	</div>
+	<article class="post">
+		{% if not data.post %}
+			<h2>Invalid Post.</h2>
+		{% else %}
+			<h1 class="post__title">{{ data.post.title }}</h1>
+			<div class="post__text">
+				{{ data.post.content | raw }}
+			</div>
+			<p class="post__footer">
+				<span class="post__date">{{ data.post._.publishedDate.format('D MMMM') }}</span>
+				{% for cat in data.post.categories %}
+					<a class="post__tag link" href="/blog/{{ cat.key }}">{{ cat.name }}</a>
+				{% endfor %}
+			</p>
+		{% endif %}
+	</article>
 {% endblock %}

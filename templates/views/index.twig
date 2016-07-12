@@ -2,15 +2,14 @@
 
 {% block header %}
 	{% set title = "(Альфа) Сайт Александра Мансурова" %}
-	<header class="index__header content">
-		<h1>Уважаемые гости и владелец страницы</h1>
+	<header class="header">
+		<h1 class="header__title">Александр Мансуров</h1>
+		<p class="header__subtitle">Фронтенд разработчик в <a href="http://idaproject.com" target="_blank" class="link">idaproject</a></p>
 	</header>
 {% endblock %}
 {% block content %}
-	<div class="content index__content">
+	<section class="links">
 		<p>Сайт находится на стадии разработки.</p>
-		<p>Приносим извинения за оказанные неудобства.</p>
-		<hr>
 		<p>В данный момент ведутся работы над <a class="link" href="/blog">блогом</a></p>
-	</div>
+	</section>
 {% endblock %}
