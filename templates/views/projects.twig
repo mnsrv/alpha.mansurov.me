@@ -1,0 +1,11 @@
+{% extends "../layouts/default.twig" %}
+
+{% block content %}
+	<section class="blog">
+		{% for project in data.projects %}
+			<p>{{ project.title }}</p>
+			<p>{{ project._.startedDate.format('D MMMM YYYY') }}</p>
+			<p>{{ project.state }}</p>
+		{% endfor %}
+	</section>
+{% endblock %}
