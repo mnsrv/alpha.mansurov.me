@@ -18,8 +18,10 @@ var Project = new keystone.List('Project', {
 Project.add({
 	title: { type: String, required: true, label: 'Название' },
 	state: { type: Types.Select, options: 'разработка, продакшен', default: 'разработка', index: true, label: 'Статус' },
-  startedDate: { type: Types.Date, index: true, default: Date.now, label: 'Дата начала разработки'},
+	color: { type: Types.Color, label: 'Цвет' },
+	startedDate: { type: Types.Date, index: true, default: Date.now, label: 'Дата начала разработки'},
 	publishedDate: { type: Types.Date, index: true, dependsOn: { state: 'продакшен' }, label: 'Дата релиза' },
+	url: { type: Types.Url, dependsOn: { state: 'продакшен' }, label: 'Ссылка' }
 });
 
 Project.defaultColumns = 'title, state|20%';

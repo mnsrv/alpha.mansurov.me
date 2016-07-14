@@ -16,6 +16,7 @@ exports = module.exports = function (req, res) {
     var Project = keystone.list('Project')
 
     var q = Project.model.find();
+		q.where('state', 'продакшен').sort('-publishedDate')
 
 		q.exec(function (err, results) {
 			locals.data.projects = results;

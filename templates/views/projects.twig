@@ -1,11 +1,19 @@
 {% extends "../layouts/default.twig" %}
 
+{% block header %}
+	{% set title = "Работаю" %}
+	<header class="header">
+		<h1 class="header__title">Работаю</h1>
+		<p class="header__subtitle">Фронтенд разработчик в <a href="http://idaproject.com" target="_blank" class="link">idaproject</a></p>
+	</header>
+{% endblock %}
+
 {% block content %}
-	<section class="blog">
+	<section class="projects">
 		{% for project in data.projects %}
-			<p>{{ project.title }}</p>
-			<p>{{ project._.startedDate.format('D MMMM YYYY') }}</p>
-			<p>{{ project.state }}</p>
+			<a href="{{ project.url }}" target="_blank" class="project{% if project.state == 'разработка' %} project_development{% endif %}" style="background-color: {{ project.color }}">
+				<p class="project__title">{{ project.title }}</p>
+			</a>
 		{% endfor %}
 	</section>
 {% endblock %}

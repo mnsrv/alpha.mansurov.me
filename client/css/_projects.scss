@@ -1,0 +1,34 @@
+.projects {
+  padding-top: 60px;
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.project {
+  width: 320px;
+  height: 200px;
+
+  box-sizing: border-box;
+  padding-left: 10px;
+
+  text-decoration: none;
+  color: black;
+
+  margin-bottom: 30px;
+  &_development {
+    opacity: 0.5;
+  }
+  &__title {
+    padding-top: 10px;
+    font-size: 30px;
+    font-weight: bold;
+  }
+}
+@media (max-width: 680px) {
+  .project {
+    width: 100%;
+    padding-bottom: 62.5%;
+  }
+}
