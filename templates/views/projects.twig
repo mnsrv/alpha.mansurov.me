@@ -11,9 +11,7 @@
 {% block content %}
 	<section class="projects">
 		{% for project in data.projects %}
-			<a href="{{ project.url }}" target="_blank" class="project{% if project.state == 'разработка' %} project_development{% endif %}" style="background-color: {{ project.color }}">
-				<p class="project__title">{{ project.title }}</p>
-			</a>
+			<a href="{{ project.url }}" target="_blank" class="project{% if project.state == 'разработка' %} project_development{% endif %}" style="color: {{ project.color }}; border-color: {{project.color}};">{{ project.title }} </a>
 		{% endfor %}
 	</section>
 {% endblock %}

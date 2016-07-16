@@ -1,29 +1,17 @@
 .projects {
-  padding-top: 30px;
-  max-width: 700px;
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  padding: 30px 10px 0;
+  word-break: break-all;
 }
 .project {
-  width: 320px;
-  height: 200px;
-
-  box-sizing: border-box;
-  padding-left: 10px;
-
   text-decoration: none;
   color: black;
-
-  margin-top: 30px;
-  &_development {
-    opacity: 0.5;
-  }
-  &__title {
-    padding-top: 10px;
-    font-size: 30px;
-    font-weight: bold;
+  font-size: 70px;
+  font-weight: bold;
+  border-bottom: 1px solid;
+  transition: 200ms;
+  opacity: 0.3;
+  &:hover {
+    opacity: 1;
   }
 }
 @media (max-width: 680px) {
