@@ -1,6 +1,9 @@
 * {
   box-sizing: border-box;
 }
+html {
+  font-size: 1vw;
+}
 .body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
@@ -33,12 +36,12 @@ h1, h2, p {
   padding: 20px 10px 0;
   margin: 0 auto;
   &__title {
-    font-size: 90px;
+    font-size: 6rem;
     font-weight: bold;
   }
   &__subtitle {
     padding-top: 10px;
-    font-size: 30px;
+    font-size: 3rem;
   }
 }
 .footer {
