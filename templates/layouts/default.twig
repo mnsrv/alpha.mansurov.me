@@ -11,14 +11,9 @@
 		{% block head %}{% endblock %}
 	</head>
 	<body class="body">
-		<main class="main">
-			{% block header %}{% endblock %}
-			{{ FlashMessages.renderMessages(messages) }}
-			{% block content %}{% endblock %}
-		</main>
-		<footer class="footer">
-			<p class="footer__copyright">Сайт работает на <a class="link" href="http://keystonejs.com/" target="_blank">Keystone JS</a></p>
-		</footer>
+		{% block header %}{% endblock %}
+		{{ FlashMessages.renderMessages(messages) }}
+		{% block content %}{% endblock %}
 		<script src="/js/main.js" type="text/javascript"></script>
 		{% block js %}{% endblock %}
 	</body>

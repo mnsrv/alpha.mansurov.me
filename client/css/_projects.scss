@@ -1,5 +1,5 @@
 .projects {
-  padding: 30px 10px 0;
+  @extend .content;
   word-break: break-all;
 }
 .project {
@@ -8,7 +8,7 @@
   font-size: 6rem;
   font-weight: bold;
   border-bottom: 1px solid;
-  transition: 200ms;
+  transition: opacity 200ms;
   opacity: 0.3;
   &:hover {
     opacity: 1;
