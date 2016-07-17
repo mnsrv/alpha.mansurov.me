@@ -3,26 +3,15 @@
 {% block header %}
 	{% set title = "(Альфа) Сайт Александра Мансурова" %}
 	<header class="header">
-		<h1 class="header__title">Александр Мансуров</h1>
-		<p class="header__subtitle">Фронтенд разработчик в <a href="http://idaproject.com" target="_blank" class="link">idaproject</a></p>
+		<h1 class="title">Александр Мансуров</h1>
+		<p class="text">Фронтенд разработчик в <a href="http://idaproject.com" target="_blank" class="link">idaproject</a></p>
 	</header>
 {% endblock %}
 {% block content %}
-	<section class="links">
-		<p>Сайт находится на стадии разработки.</p>
-		<div class="changelog">
-			<h2>Список изменений: </h2>
-			<ul>
-				<li>16 июля: Эксперимент с динамичным размером шрифта и сеткой. Убрал футер. Строка с текстом вместо прямоугольника на странице проектов.</li>
-				<li>14 июля: Минимальная верстка проектов. Добавил поля Цвет и Ссылка в проект. Добавил вьюпорт.</li>
-				<li>13 июля: Создал модель Проект.</li>
-				<li>12 июля: Добавил адаптивности. Начал вести список изменений.</li>
-				<li>11 июля: Русифицировал дату в блоге. Добавил карандаш для редактирования заметок.</li>
-				<li>10 июля: Сверстал блог. Выложил сайт на Хероку.</li>
-				<li>30 июня: Создал модели Заметка и Тег.</li>
-				<li>26 июня: Начал собирать статику вебпаком. Сменил джейд на твиг.</li>
-				<li>19 июня: Развернул кейстоун.</li>
-			</ul>
-		</div>
+	<section class="projects">
+		<h2 class="title">сделал</h2>
+		{% for project in data.projects %}
+			<a href="{{ project.url }}" target="_blank" class="link">{{ project.title }} </a>
+		{% endfor %}
 	</section>
 {% endblock %}

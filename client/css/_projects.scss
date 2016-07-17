@@ -1,16 +1,14 @@
 .projects {
   @extend .content;
   word-break: break-all;
+  padding-top: 2rem;
+  &__title {
+    color: rgba(0,0,0,0.5);
+  }
 }
 .project {
   text-decoration: none;
   color: black;
   font-size: 6rem;
   font-weight: bold;
-  border-bottom: 1px solid;
-  transition: opacity 200ms;
-  opacity: 0.3;
-  &:hover {
-    opacity: 1;
-  }
 }
