@@ -32,7 +32,3 @@ h1, h2, p {
     border-color: rgba($color-main, 0.3);
   }
 }
-.header {
-  @extend .content;
-  padding-top: 2rem;
-}

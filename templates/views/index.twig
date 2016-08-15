@@ -1,17 +1,28 @@
 {% extends "../layouts/default.twig" %}
 
-{% block header %}
-	{% set title = "(Альфа) Сайт Александра Мансурова" %}
-	<header class="header">
-		<h1 class="title">Александр Мансуров</h1>
-		<p class="text">Фронтенд разработчик в <a href="http://idaproject.com" target="_blank" class="link">idaproject</a></p>
-	</header>
-{% endblock %}
 {% block content %}
-	<section class="projects">
-		<h2 class="title">сделал</h2>
-		{% for project in data.projects %}
-			<a href="{{ project.url }}" target="_blank" class="link">{{ project.title }} </a>
-		{% endfor %}
+	<section class="index">
+		<header class="header">
+			<svg class="hair" viewBox="0 0 1200 180" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+				<g fill="black">
+					<path d="M0,180 L0,0 L1200,0 L1200,180 C1200,180 968.867666,174.7109 925.874634,108.926292 C877.204346,34.4547882 849.41394,99.1803513 752.043945,108.926292 C649.809704,119.159105 265.889025,-47.5978717 160.331451,108.926292 C115.772324,175 0,180 0,180 Z"></path>
+				</g>
+			</svg>
+		</header>
+		<div class="head">
+			<div class="eyes">
+				<svg class="eye-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+					<circle cx="45" cy="45" r="45"></circle>
+				</svg>
+				<svg class="eye-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+					<circle cx="45" cy="45" r="45"></circle>
+				</svg>
+			</div>
+			<div class="mouth">
+				<svg class="mouth-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+					<path d="M162.189218,76.3465691 C260.163684,76.3465643 344.039948,26.0047064 320.723692,4.37082932 C297.407436,-17.2630477 294.198638,48.4454336 162.189212,48.4454341 C30.1797864,48.4454346 25.9269581,-15.3769699 3.65472844,4.37082932 C-18.6175013,24.1186285 64.2147519,76.346574 162.189218,76.3465691 Z"></path>
+				</svg>
+			</div>
+		</div>
 	</section>
 {% endblock %}
