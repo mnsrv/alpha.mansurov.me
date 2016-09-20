@@ -8,5 +8,18 @@
 
 $max-width: 700px;
 
-$color-main: #1385e5;
-$color-lego: #FFCD00;
+$color-primary: #FFD102;
+$color-secondary: #1245AA;
+$color-helper: #6D0BAB;
+
+$media-s: 600px;
+$media-m: 960px;
+
+@mixin respond-to($media) {
+  @if $media == s {
+    @media only screen and (max-width: $media-s) { @content; }
+  }
+  @else if $media == m {
+    @media only screen and (min-width: $media-s + 1) and (max-width: $media-m) { @content; }
+  }
+}

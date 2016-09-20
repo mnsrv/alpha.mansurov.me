@@ -1,0 +1,43 @@
+.intro {
+  background-image: url(https://pp.vk.me/c636728/v636728276/2c83d/Sbvgc_dGDOc.jpg);
+  background-color: $color-secondary;
+  background-blend-mode: luminosity;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 10%;
+  @include respond-to(m) {
+    padding: 0 50px;
+  }
+  @include respond-to(s) {
+    padding: 0;
+    justify-content: flex-end;
+  }
+  &__title {
+    color: $color-primary;
+    width: 60%;
+    box-sizing: border-box;
+  }
+  &__text {
+    color: white;
+    width: 60%;
+    margin-top: 4rem;
+    box-sizing: border-box;
+  }
+}
+@media only screen and (max-width:960px) {
+  .intro__title {width: 100%;}
+  .intro__text {width: 100%;}
+}
+@media only screen and (max-width:600px) {
+  .intro__title {
+    padding: 0 10px;
+  }
+  .intro__text {
+    background-color: rgba($color-secondary,0.777);
+    padding: 10px;
+  }
+}
