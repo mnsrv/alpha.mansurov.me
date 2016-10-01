@@ -1,11 +1,16 @@
 {% extends "../layouts/default.twig" %}
 
 {% block content %}
-	<main class="intro">
-		<h1 class="title intro__title">Александр<br>Мансуров</h1>
-		<div class="text intro__text">
-			<p>Разрабатываю сайты. Фронтенд разработчик в <a class="link" href="http://idaproject.com" target="_blank">Идапроджект</a>. Живу в Москве.</p>
-			<p>Это мой сайт, здесь я экспериментирую с разными штуками и делюсь наблюдениями.</p>
-		</div>
-	</main>
+<div class="main">
+	<div class="wallpaper"></div>
+	<div class="dock">
+		<div class="dock__icon is-active dock__icon_notes"></div>
+		<div class="dock__divider"></div>
+		<a href="https://twitter.com/sashamjolnir" target="_blank" class="dock__icon dock__icon_twitter"></a>
+	</div>
+	<div class="photo">
+		<img class="photo__image" src="https://pp.vk.me/c836528/v836528276/62f/e-I2i_OUFxQ.jpg" alt="Александр Мансуров.jpg" />
+		<p class="photo__text">Александр Мансуров.jpg</p>
+	</div>
+</div>
 {% endblock %}
