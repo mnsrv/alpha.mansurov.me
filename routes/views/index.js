@@ -7,6 +7,7 @@ module.exports = function(req, res) {
   locals.section = 'index';
   locals.data = {
 		projects: [],
+    posts: [],
 	};
 
   // Load projects
@@ -21,6 +22,18 @@ module.exports = function(req, res) {
 			next(err);
 		});
 	});
+
+  // Load blog posts
+  view.on('init', function(next) {
+    var Post = keystone.list('Post');
+    Post.model.find()
+      .where('state', 'опубликована')
+      .sort('-publishedDate')
+      .exec(function(err, results) {
+        locals.data.posts = results;
+  			next(err);
+      });
+  });
 
   view.render('index');
 }

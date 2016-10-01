@@ -12,5 +12,36 @@
 		<img class="photo__image" src="https://pp.vk.me/c836528/v836528276/62f/e-I2i_OUFxQ.jpg" alt="Александр Мансуров.jpg" />
 		<p class="photo__text">Александр Мансуров.jpg</p>
 	</div>
+	<div class="window">
+		<div class="window__header">
+			<div class="window__circles">
+				<div class="window__circle window__circle_red"></div>
+				<div class="window__circle window__circle_yellow"></div>
+				<div class="window__circle window__circle_green"></div>
+			</div>
+			<p class="window__title">Заметки</p>
+		</div>
+		<div class="window__body">
+			<div class="notes">
+				<div class="notes__list">
+					{% for post in data.posts %}
+						<div class="notes__list-element js-note{% if loop.first %} is-active{% endif %}">
+							<p class="notes__list-title">{{ post.title }}</p>
+							<p class="notes__list-date">{{ post._.publishedDate.format('D MMMM YYYY') }}</p>
+						</div>
+					{% endfor %}
+				</div>
+				<div class="notes__full">
+					{% for post in data.posts %}
+						<div class="notes__full-element js-note-full{% if loop.first %} is-active{% endif %}">
+							<p class="notes__full-date">{{ post._.publishedDate.format('D MMMM YYYY') }}</p>
+							<p class="notes__full-title">{{ post.title }}</p>
+							<div class="notes__full-text">{{ post.content | raw }}</div>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 {% endblock %}
