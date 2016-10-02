@@ -4,7 +4,8 @@
   "private": true,
   "description": "",
   "dependencies": {
-    "jquery": "^3.1.1"
+    "jquery": "^3.1.1",
+    "viewport-units-buggyfill": "^0.6.0"
   },
   "devDependencies": {
     "autoprefixer": "^6.3.6",
