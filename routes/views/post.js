@@ -6,7 +6,6 @@ exports = module.exports = function (req, res) {
 	var locals = res.locals;
 
 	// Set locals
-	locals.section = 'blog';
 	locals.filters = {
 		post: req.params.post,
 	};
@@ -16,29 +15,27 @@ exports = module.exports = function (req, res) {
 
 	// Load the current post
 	view.on('init', function (next) {
-
-		var q = keystone.list('Post').model.findOne({
+		var Post = keystone.list('Post');
+		Post.model.findOne({
 			state: 'опубликована',
 			slug: locals.filters.post,
-		}).populate('categories');
-
-		q.exec(function (err, result) {
-			locals.data.post = result;
-			next(err);
-		});
-
+		})
+			.exec(function (err, result) {
+				locals.data.post = result;
+				next(err);
+			});
 	});
 
 	// Load other posts
 	view.on('init', function (next) {
-
-		var q = keystone.list('Post').model.find().where('state', 'опубликована').sort('-publishedDate').limit('4');
-
-		q.exec(function (err, results) {
-			locals.data.posts = results;
-			next(err);
-		});
-
+		var Post = keystone.list('Post');
+		Post.model.find()
+			.where('state', 'опубликована')
+			.sort('-publishedDate')
+			.exec(function (err, results) {
+				locals.data.posts = results;
+				next(err);
+			});
 	});
 
 	// Render the view

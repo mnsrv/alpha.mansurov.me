@@ -1,6 +1,6 @@
 {% extends "../layouts/default.twig" %}
 
-{% set title = data.post.title %}
+{% set title = 'Заметки Александра Мансурова' %}
 
 {% block dock %}{% include "../blocks/dock.twig" with {'active': 'notes'} %}{% endblock %}
 
@@ -12,25 +12,26 @@
 			<div class="window__circle window__circle_yellow"></div>
 			<div class="window__circle window__circle_green"></div>
 		</div>
-		{% include "../blocks/window-menu.twig" %}
 		<p class="window__title">Заметки</p>
 	</div>
 	<div class="window__body">
 		<div class="notes">
 			<div class="notes__list">
 				{% for post in data.posts %}
-					<a href="/notes/{{ post.slug }}" class="notes__list-element js-note{% if post.id == data.post.id %} is-active{% endif %}">
+					<a href="/notes/{{ post.slug }}" class="notes__list-element js-note">
 						<p class="notes__list-title">{{ post.title }}</p>
 						<p class="notes__list-date">{{ post._.publishedDate.format('D MMMM YYYY') }}</p>
 					</a>
 				{% endfor %}
 			</div>
 			<div class="notes__full">
-				<div class="notes__full-element js-note-full is-active">
-					<p class="notes__full-date">{{ data.post._.publishedDate.format('D MMMM YYYY') }}</p>
-					<p class="notes__full-title">{{ data.post.title }}</p>
-					<div class="notes__full-text">{{ data.post.content | raw }}</div>
-				</div>
+				{% for post in data.posts %}
+					<div class="notes__full-element js-note-full">
+						<p class="notes__full-date">{{ post._.publishedDate.format('D MMMM YYYY') }}</p>
+						<p class="notes__full-title">{{ post.title }}</p>
+						<div class="notes__full-text">{{ post.content | raw }}</div>
+					</div>
+				{% endfor %}
 			</div>
 		</div>
 	</div>

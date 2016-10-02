@@ -23,17 +23,5 @@ module.exports = function(req, res) {
 		});
 	});
 
-  // Load blog posts
-  view.on('init', function(next) {
-    var Post = keystone.list('Post');
-    Post.model.find()
-      .where('state', 'опубликована')
-      .sort('-publishedDate')
-      .exec(function(err, results) {
-        locals.data.posts = results;
-  			next(err);
-      });
-  });
-
   view.render('index');
 }
