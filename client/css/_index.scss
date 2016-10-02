@@ -151,6 +151,8 @@
   &__title {
     color: #676767;
     font-size: 14px;
+    cursor: default;
+    user-select: none;
   }
   &__body {
     height: 502px;
@@ -185,15 +187,18 @@
       font-weight: bold;
       font-size: 14px;
       margin-bottom: 6px;
+      cursor: default;
     }
     &-date {
       font-size: 12px;
+      cursor: default;
     }
   }
   &__full {
     width: 75%;
     padding: 12px 20px;
     box-sizing: border-box;
+    overflow: auto;
     &-element {
       display: none;
       &.is-active {
@@ -209,6 +214,7 @@
       color: rgb(170,170,170);
       font-size: 12px;
       text-align: center;
+      margin-bottom: 10px;
     }
     &-text {
       line-height: 1.5;
