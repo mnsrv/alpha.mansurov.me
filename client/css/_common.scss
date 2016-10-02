@@ -1,6 +1,3 @@
-html {
-  font-size: 1vw;
-}
 .body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
@@ -14,39 +11,4 @@ hr {
   border-style: solid;
   border-left: 0;
   border-right: 0;
-}
-.content {
-  width: 94rem;
-  margin: 0 auto;
-}
-.title {
-  font-size: 7rem;
-  line-height: 1;
-  font-weight: bold;
-  transition: 150ms ease;
-  @include respond-to(m) {
-    font-size: 80px;
-  }
-  @include respond-to(s) {
-    font-size: 60px;
-  };
-}
-.text {
-  font-size: 2rem;
-  line-height: 1.5;
-  @include respond-to(m) {
-    font-size: 24px;
-  }
-  @include respond-to(s) {
-    font-size: 20px;
-  };
-}
-.link {
-  @extend .text;
-  text-decoration: none;
-  color: $color-primary;
-  transition: color 100ms;
-  &:hover {
-    color: $color-secondary;
-  }
 }
