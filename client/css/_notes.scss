@@ -18,7 +18,8 @@
     position: absolute;
     top: 0;
     left: 0;
-    overflow: auto;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     &-element {
       display: block;
       height: 63px;
@@ -49,6 +50,7 @@
     padding: 12px 20px;
     box-sizing: border-box;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     transform: translate3d(0,0,0);
     transition: transform 300ms ease, width 300ms ease;
     background-color: #fafafa;
