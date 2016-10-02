@@ -1,7 +1,8 @@
 var webpack = require("webpack");
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var autoprefixer = require('autoprefixer');
-var DashboardPlugin = require('webpack-dashboard/plugin');
+
+var isProduction = process.env.NODE_ENV === 'production';
 
 module.exports = {
   entry: "./client/main.js",
@@ -25,8 +26,7 @@ module.exports = {
   plugins: [
     new ExtractTextPlugin('css/main.css', {
       allChunks: true
-    }),
-    new DashboardPlugin()
+    })
   ],
   postcss: function(){
     return [autoprefixer]
@@ -39,3 +39,15 @@ module.exports = {
     }
   }
 };
+
+if (isProduction) {
+  var DashboardPlugin = require('webpack-dashboard/plugin');
+  module.exports.plugins = (module.exports.plugins || []).concat([
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: '"production"'
+      }
+    }),
+    new DashboardPlugin()
+  ])
+}
