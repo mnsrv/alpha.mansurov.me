@@ -40,14 +40,9 @@ module.exports = {
   }
 };
 
-if (isProduction) {
+if (!isProduction) {
   var DashboardPlugin = require('webpack-dashboard/plugin');
   module.exports.plugins = (module.exports.plugins || []).concat([
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: '"production"'
-      }
-    }),
     new DashboardPlugin()
   ])
 }
