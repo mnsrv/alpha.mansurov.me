@@ -1,6 +1,7 @@
 var webpack = require("webpack");
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var autoprefixer = require('autoprefixer');
+var DashboardPlugin = require('webpack-dashboard/plugin');
 
 module.exports = {
   entry: "./client/main.js",
@@ -24,9 +25,17 @@ module.exports = {
   plugins: [
     new ExtractTextPlugin('css/main.css', {
       allChunks: true
-    })
+    }),
+    new DashboardPlugin()
   ],
   postcss: function(){
     return [autoprefixer]
+  },
+  devServer: {
+    secure: false,
+    proxy: {
+      "*": "http://localhost:3000",
+      changeOrigin: true
+    }
   }
 };
