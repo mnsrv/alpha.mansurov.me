@@ -26,7 +26,7 @@
     "webpack-dev-server": "^1.16.1"
   },
   "scripts": {
-    "start": "node keystone.js",
+    "start": "PORT=3044 node keystone.js",
     "build": "webpack",
     "watch": "webpack -w",
     "dev": "NODE_ENV=development webpack-dashboard -- webpack-dev-server --host 0.0.0.0 --progress --inline --hot",
