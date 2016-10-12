@@ -1,6 +1,7 @@
 npm-debug.log
 .DS_Store
 
+.idea/
 node_modules/
 public/
 
