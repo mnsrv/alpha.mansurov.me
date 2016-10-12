@@ -1,6 +1,7 @@
 var webpack = require("webpack");
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var autoprefixer = require('autoprefixer');
+require('dotenv').config({silent: true});
 
 var isProduction = process.env.NODE_ENV === 'production';
 
@@ -34,7 +35,7 @@ module.exports = {
   devServer: {
     secure: false,
     proxy: {
-      "*": "http://localhost:3000",
+      "**": "http://localhost:" + process.env.PORT,
       changeOrigin: true
     }
   }
