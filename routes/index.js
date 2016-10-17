@@ -1,5 +1,6 @@
-const keystone = require('keystone');
-const middleware = require('./middleware');
+import keystone from 'keystone';
+import middleware from './middleware';
+
 const importRoutes = keystone.importer(__dirname);
 
 keystone.pre('routes', middleware.initErrorHandlers);
@@ -21,14 +22,20 @@ keystone.set('500', function(err, req, res, next) {
     res.err(err, title, message);
 });
 
-var routes = {
-  views: importRoutes('./views')
-}
+const routes = {
+  views: importRoutes('./views'),
+  api: importRoutes('./api'),
+};
 
-exports = module.exports = function(app) {
-  app.get('/', routes.views.index);
-  app.get('/notes', routes.views.notes);
-	app.get('/notes/:post', routes.views.post);
-  app.get('/work', routes.views.projects);
-  app.get('/lego', routes.views.lego);
-}
+exports = module.exports = (app) => {
+  // API
+  app.all('*', keystone.middleware.api);
+  app.get('/api/notes', routes.api.notes.list);
+  app.get('/api/notes/:slug', routes.api.notes.get);
+
+  // Views
+  app.get('*', routes.views.index);
+
+  // NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
+  // app.get('/protected', middleware.requireUser, routes.views.protected);
+};

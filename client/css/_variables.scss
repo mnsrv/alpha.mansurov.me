@@ -19,6 +19,9 @@ $media-m: 960px;
   @if $media == s {
     @media only screen and (max-width: $media-s) { @content; }
   }
+  @else if $media == desktop {
+    @media only screen and (min-width: $media-s + 1) { @content; }
+  }
   @else if $media == m {
     @media only screen and (min-width: $media-s + 1) and (max-width: $media-m) { @content; }
   }

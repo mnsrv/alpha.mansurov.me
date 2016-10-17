@@ -6,18 +6,42 @@
   display: flex;
   padding: 10px;
   box-sizing: border-box;
-  background-color: rgba(255, 255, 255, 0.23);
-	box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.5);
+  background-color: rgba(white, 0.23);
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.5);
   border-radius: 8px 8px 0 0;
   backdrop-filter: blur(30px);
+  @include respond-to(s) {
+    border-radius: 0;
+    width: 100%;
+    left: 0;
+    transform: none;
+    background-color: rgba(white, 0.3);
+    padding: 14px 27px 2px;
+    justify-content: center;
+  }
   &__icon {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     background-repeat: no-repeat;
     background-size: contain;
     position: relative;
+    text-decoration: none;
     &:last-child {
       margin-right: 0;
+    }
+    @include respond-to(s) {
+      margin-right: 25px;
+      margin-bottom: 20px;
+      &:after {
+        width: 100%;
+        font-size: 12px;
+        line-height: 15px;
+        color: white;
+        position: absolute;
+        bottom: -20px;
+        left: 0;
+        text-align: center;
+      }
     }
     &.is-active {
       &:before {
@@ -35,9 +59,21 @@
     &_twitter {
       background-image: url(https://blog.twitter.com/sites/all/themes/gazebo/img/twitter-bird-white-on-blue.png);
       border-radius: 50%;
+      @include respond-to(s) {
+        border-radius: 14px;
+        &:after {
+          content: 'Twitter';
+        }
+      }
     }
     &_notes {
       background-image: url(https://67.media.tumblr.com/630bcfe5f8b6a3cb9a1ae9c37b6a65ce/tumblr_oedgnlb2op1ru7eh1o1_100.png);
+      @include respond-to(s) {
+        background-image: url(https://67.media.tumblr.com/b8a9c621248edf5af2948781e7a2378a/tumblr_of7d4h1vQX1ru7eh1o1_250.png);
+        &:after {
+          content: 'Заметки';
+        }
+      }
     }
   }
   &__divider {
@@ -45,6 +81,9 @@
     height: 50px;
     background-color: rgba(black, 0.47);
     margin: 0 15px;
+    @include respond-to(s) {
+      display: none;
+    }
   }
   &__link {
 

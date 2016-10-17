@@ -41,9 +41,16 @@ body {
   top: 0;
   left: 0;
   z-index: -1;
+  @include respond-to(s) {
+    background-image: url(http://i.imgur.com/N4KcYQI.jpg);
+    filter: none;
+  }
 }
 .photo {
   width: 150px;
+  @include respond-to(s) {
+    display: none;
+  }
   &__image {
     width: 100%;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);

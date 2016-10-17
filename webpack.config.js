@@ -6,14 +6,19 @@ require('dotenv').config({silent: true});
 var isProduction = process.env.NODE_ENV === 'production';
 
 module.exports = {
-  entry: "./client/main.js",
+  entry: "./client/js/index.js",
   output: {
-    filename: "js/main.js",
+    filename: "js/index.js",
     path: __dirname + "/public/",
     publicPath: "/"
   },
   module: {
     loaders: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: "babel?presets[]=react,presets[]=es2015"
+      },
       {
         test: /\.(scss|css)$/,
         loader: ExtractTextPlugin.extract("style-loader", "css-loader!postcss-loader!sass-loader")
@@ -26,8 +31,10 @@ module.exports = {
   },
   plugins: [
     new ExtractTextPlugin('css/main.css', {
-      allChunks: true
-    })
+      allChunks: true,
+      disable: process.env.NODE_ENV == 'development'
+    }),
+    new webpack.ContextReplacementPlugin(/moment[\\\/]locale$/, /^\.\/(en|ru)$/),
   ],
   postcss: function(){
     return [autoprefixer]

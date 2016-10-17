@@ -31,6 +31,9 @@
       overflow: hidden;
       &.is-active {
         background-color: rgb(253,236,174);
+        @include respond-to(s) {
+          background-color: transparent;
+        }
       }
     }
     &-title {
@@ -45,29 +48,26 @@
     }
   }
   &__full {
-    width: 100%;
+    width: calc(100% - 240px);
     min-width: 240px;
     padding: 12px 20px;
     box-sizing: border-box;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    transform: translate3d(0,0,0);
+    transform: translate3d(240px, 0, 0);
     transition: transform 300ms ease, width 300ms ease;
     background-color: #fafafa;
+    z-index: 0;
+    @include respond-to(s) {
+      transform: translate3d(0,0,0);
+      width: 100%;
+      transition: transform 300ms ease, width 300ms ease;
+    }
     &.is-hidden {
-      transform: translate3d(240px,0,0);
-      width: calc(100% - 240px);
       @include respond-to(s) {
         transform: translate3d(99%,0,0);
-        width: 100%;
-        transition: transform 300ms ease, width 300ms ease, z-index 0ms linear 200ms;
         z-index: -1;
-      }
-    }
-    &-element {
-      display: none;
-      &.is-active {
-        display: block;
+        transition: transform 300ms ease, z-index 0ms linear 200ms;
       }
     }
     &-title {

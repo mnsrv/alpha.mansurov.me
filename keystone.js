@@ -1,6 +1,8 @@
-// Simulate config options from your production environment by
-// customising the .env file in your project's root folder.
 require('dotenv').config({silent: true});
+
+require('babel-register')({
+  "presets": ["es2015"]
+});
 
 var moment = require('moment');
 moment.locale('ru');

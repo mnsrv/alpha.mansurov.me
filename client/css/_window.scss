@@ -1,14 +1,22 @@
 .window {
   width: calc(100% - 20px);
+  max-width: 720px;
   height: calc(100% - 90px);
+  max-height: 600px;
   position: absolute;
-  left: 10px;
-  top: 10px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   border-radius: 5px 5px 4px 4px;
   overflow: hidden;
-  max-width: 720px;
-  left: 50%;
-  transform: translateX(-50%);
+  @include respond-to(s) {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: none;
+    border-radius: 0;
+  }
   &__header {
     width: 100%;
     height: 38px;
@@ -24,6 +32,16 @@
     align-items: center;
     padding: 0 70px;
     position: relative;
+    @include respond-to(s) {
+      height: 45px;
+      background: #F7F7F7;
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
+      &.is-menu-openned {
+        border-bottom: 1px solid #B0B0B0;
+      }
+    }
   }
   &__circles {
     display: flex;
@@ -31,6 +49,9 @@
     left: 14px;
     top: 50%;
     transform: translateY(-50%);
+    @include respond-to(s) {
+      display: none;
+    }
   }
   &__circle {
     width: 12px;
@@ -57,27 +78,42 @@
 	    border-color: #1bac2c;
     }
   }
-  &__menu {
-    position: absolute;
-    left: 82px;
-    top: 6px;
-    &:active {
-      .window__menu-background {
-        fill: #e2e1e2;
-      }
-      .window__menu-icon,
-      .window__menu-line {
-        stroke: #4c4c4c;
-      }
-    }
-  }
   &__title {
     color: #676767;
     font-size: 14px;
     cursor: default;
     user-select: none;
     @include respond-to(s) {
+      width: 50%;
+      text-align: left;
+      color: #eaab06;
+      font-size: 17px;
+      line-height: 20px;
+      font-weight: bold;
+      padding: 0 34px;
+      box-sizing: border-box;
+      position: absolute;
+      top: 12px;
+      left: 0;
+      transform: translateX(0);
+      transition: 300ms ease;
+      .is-menu-openned & {
+        color: black;
+        transform: translateX(50%);
+        text-align: center;
+      }
+    }
+  }
+  &__close {
+    display: block;
+    position: absolute;
+    left: 16px;
+    top: 12px;
+    @include respond-to(desktop) {
       display: none;
+    }
+    &-svg {
+      display: block;
     }
   }
   &__body {
@@ -92,5 +128,8 @@
     box-sizing: border-box;
     border-top: 0;
     overflow: hidden;
+    @include respond-to(s) {
+      height: calc(100% - 45px);
+    }
   }
 }

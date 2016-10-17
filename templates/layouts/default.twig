@@ -5,26 +5,14 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-		<title>{{ title|default("Mansurov.me Beta") }}</title>
+		<title>Александр Мансуров. Фронтенд разработчик.</title>
 		<link rel="shortcut icon" href="favicon.ico" />
 		<link rel="stylesheet" href="/css/main.css">
-		{% block css %}{% endblock %}
-		{% block head %}{% endblock %}
 	</head>
 	<body class="body">
-		{% block header %}{% endblock %}
 		{{ FlashMessages.renderMessages(messages) }}
-		<div class="main">
-			<div class="wallpaper"></div>
-			{% block dock %}{% include "../blocks/dock.twig" %}{% endblock %}
-			<div class="photo">
-				<img class="photo__image" src="https://pp.vk.me/c836528/v836528276/62f/e-I2i_OUFxQ.jpg" alt="Александр Мансуров.jpg" />
-				<p class="photo__text">Александр Мансуров.jpg</p>
-			</div>
-			{% block content %}{% endblock %}
-		</div>
-		<script src="/js/main.js" type="text/javascript"></script>
-		{% block js %}{% endblock %}
+		{% block content %}{% endblock %}
+		<script src="/js/index.js" type="text/javascript"></script>
 	</body>
 </html>
 {% endspaceless %}
