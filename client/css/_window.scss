@@ -38,7 +38,7 @@
       border: none;
       border-radius: 0;
       box-shadow: none;
-      &.is-menu-openned {
+      &.is-menu-opened {
         border-bottom: 1px solid #B0B0B0;
       }
     }
@@ -97,7 +97,7 @@
       left: 0;
       transform: translateX(0);
       transition: 300ms ease;
-      .is-menu-openned & {
+      .is-menu-opened & {
         color: black;
         transform: translateX(50%);
         text-align: center;

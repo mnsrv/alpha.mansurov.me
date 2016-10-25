@@ -6,7 +6,7 @@ import WindowMenu from '../WindowMenu';
 
 const NoteList = (props) =>
   <div className="window">
-    <div className={`window__header${props.menuOpenned ? ' is-menu-openned' : ''}`}>
+    <div className={`window__header${props.menuOpened ? ' is-menu-opened' : ''}`}>
       <div className="window__circles">
         <div className="window__circle window__circle_red"></div>
         <div className="window__circle window__circle_yellow"></div>
@@ -27,7 +27,7 @@ const NoteList = (props) =>
             />
           )}
         </div>
-        <div className={`notes__full${props.menuOpenned ? ' is-hidden' : ''}`}>
+        <div className={`notes__full${props.menuOpened ? ' is-hidden' : ''}`}>
           {props.activeNote ? <NoteItem note={props.activeNote} /> : ''}
         </div>
       </div>

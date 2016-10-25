@@ -8,7 +8,7 @@ class NoteListContainer extends Component {
     this.state = {
       notes: [],
       activeNote: null,
-      menuOpenned: true,
+      menuOpened: true,
     };
     this.handlePostClick = this.handlePostClick.bind(this);
     this.showMenu = this.showMenu.bind(this);
@@ -36,13 +36,13 @@ class NoteListContainer extends Component {
       ? this.state.notes.filter(note => note.slug == slug)[0]
       : this.state.notes[0];
     if (slug) {
-      this.setState({ menuOpenned: false });
+      this.setState({ menuOpened: false });
     }
     this.setState({ activeNote: activeNote });
   }
 
   showMenu() {
-    this.setState({ menuOpenned: true })
+    this.setState({ menuOpened: true })
   }
 
   render() {
@@ -52,7 +52,7 @@ class NoteListContainer extends Component {
         activeNote={this.state.activeNote}
         onNoteClick={this.handlePostClick}
         showMenu={this.showMenu}
-        menuOpenned={this.state.menuOpenned}
+        menuOpened={this.state.menuOpened}
       />
     );
   }
