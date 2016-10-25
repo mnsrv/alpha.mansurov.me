@@ -4899,6 +4899,12 @@ react-domify@0.2.6:
   version "0.2.6"
   resolved "https://registry.yarnpkg.com/react-domify/-/react-domify-0.2.6.tgz#570d3a15cfc9d1fb2f464ccde1236fc5852e49bc"
 
+react-draggable:
+  version "2.2.2"
+  resolved "https://registry.yarnpkg.com/react-draggable/-/react-draggable-2.2.2.tgz#80932da5ad81795bdfd141e846d7a9309680e270"
+  dependencies:
+    classnames "^2.2.5"
+
 react-images@0.5.1:
   version "0.5.1"
   resolved "https://registry.yarnpkg.com/react-images/-/react-images-0.5.1.tgz#a01ba3e059009d4241bbf8a3774775fbb9821341"
