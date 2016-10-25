@@ -41,6 +41,9 @@
       font-size: 14px;
       margin-bottom: 6px;
       user-select: none;
+      white-space: pre;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
     &-date {
       font-size: 12px;
