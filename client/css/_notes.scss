@@ -21,7 +21,9 @@
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     &-element {
-      display: block;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       height: 63px;
       padding: 12px 20px;
       border-bottom: 1px solid #e9e9e9;
@@ -39,7 +41,7 @@
     &-title {
       font-weight: bold;
       font-size: 14px;
-      margin-bottom: 6px;
+      line-height: 1.5;
       user-select: none;
       white-space: pre;
       overflow: hidden;
@@ -76,6 +78,7 @@
     &-title {
       font-weight: bold;
       font-size: 14px;
+      line-height: 1.5;
       margin-bottom: 12px;
     }
     &-date {
