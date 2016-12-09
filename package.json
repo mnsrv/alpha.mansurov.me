@@ -40,7 +40,7 @@
     "start": "node keystone.js",
     "build": "webpack",
     "watch": "webpack -w",
-    "dev": "NODE_ENV=development webpack-dashboard -- webpack-dev-server --host 0.0.0.0 --progress --inline --hot",
+    "dev": "NODE_ENV=development webpack-dev-server --host 0.0.0.0 --progress --inline --hot",
     "production": "NODE_ENV=production webpack -p --progress",
     "postinstall": "npm run production"
   },
