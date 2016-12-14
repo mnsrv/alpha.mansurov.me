@@ -31,6 +31,7 @@
     align-items: center;
     padding: 0 70px;
     position: relative;
+    cursor: move;
     @include respond-to(s) {
       height: 45px;
       background: #F7F7F7;
