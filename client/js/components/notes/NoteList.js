@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 import Draggable from 'react-draggable';
 import NoteMenuItem from './NoteMenuItem';
 import NoteItem from './NoteItem';
@@ -11,11 +12,11 @@ const NoteList = (props) =>
   >
     <div className="window">
       <div className={`window__header${props.menuOpened ? ' is-menu-opened' : ''}`}>
-        <div className="window__circles">
+        <Link to="/" className="window__circles">
           <div className="window__circle window__circle_red"></div>
           <div className="window__circle window__circle_yellow"></div>
           <div className="window__circle window__circle_green"></div>
-        </div>
+        </Link>
         <WindowMenu />
         <p className="window__title" onClick={props.showMenu}>Заметки</p>
       </div>
